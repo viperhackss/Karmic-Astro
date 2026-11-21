@@ -310,6 +310,7 @@ a {
 .site-header {
   position: fixed;
   inset: 0 0 auto;
+  top: env(safe-area-inset-top, 0px);
   z-index: 40;
   height: var(--header-h);
   display: flex;

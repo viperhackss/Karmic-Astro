@@ -117,7 +117,7 @@ export function initVani(ctx) {
     const s = STORIES[idx];
     text.textContent = s.text;
     nameEl.textContent = s.name;
-    metaEl.textContent = `${s.meta} · ★★★★★`;
+    metaEl.textContent = `Sample story · ${s.meta}`;
     dotBtns.forEach((b, k) => b.classList.toggle('active', k === idx));
     quote.classList.remove('swap');
     void quote.offsetWidth;

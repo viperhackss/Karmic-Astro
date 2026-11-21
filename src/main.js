@@ -1,10 +1,4 @@
-import '@fontsource/rozha-one/400.css';
-import '@fontsource/yatra-one/400.css';
-import '@fontsource/mukta/400.css';
-import '@fontsource/mukta/500.css';
-import '@fontsource/mukta/600.css';
-import '@fontsource/mukta/700.css';
-import '@fontsource/mukta/800.css';
+import './fonts.js';
 import './styles/base.css';
 import './styles/hero.css';
 import './styles/acts.css';

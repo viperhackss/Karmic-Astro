@@ -2,7 +2,7 @@
 .filmbar {
   position: fixed;
   left: 50%;
-  bottom: 14px;
+  bottom: calc(14px + env(safe-area-inset-bottom, 0px));
   z-index: 45;
   width: min(820px, calc(100% - 24px));
   height: 60px;
