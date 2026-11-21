@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KarmicAstro — Talk to Astrologers, Free Kundli &amp; Daily Rashiphal</title>
+    <meta name="description" content="KarmicAstro: chat or call verified Vedic astrologers, generate your free Janam Kundli, match kundlis and read today's Panchang — performed as a Madhubani puppet show." />
+    <meta name="theme-color" content="#141a4a" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:title" content="KarmicAstro — Who pulls the strings of your destiny?" />
+    <meta property="og:description" content="Live astrology consultations, free Kundli, Kundli Milan and Panchang." />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ═════════════ Header ═════════════ -->
+    <header class="site-header" data-header>
+      <a class="brand" href="#prastavana" aria-label="KarmicAstro home">
+        <span class="brand-mark" data-art="sun-mini"></span>
+        <span class="brand-name">Karmic<span>Astro</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#rashi">Horoscope</a>
+        <a href="#kundli">Free Kundli</a>
+        <a href="#jyotishi">Astrologers</a>
+        <a href="#milan">Matching</a>
+        <a href="#panchang">Panchang</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-ghost btn-sm hide-sm" href="#app">Get the app</a>
+        <a class="btn btn-primary btn-sm" href="#jyotishi">Talk to Astrologer</a>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" data-menu-toggle><span></span><span></span></button>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ═════════════ Prologue: the puppet stage ═════════════ -->
+      <section id="prastavana" class="hero" data-chapter="Prastavana" data-chapter-en="Prologue">
+        <div class="stage-backdrop" aria-hidden="true">
+          <div class="sky"></div>
+          <div class="sky-sun" data-art="sun"></div>
+          <div class="sky-moon" data-art="moon"></div>
+          <div class="hills" data-art="hills"></div>
+        </div>
+        <div class="proscenium" aria-hidden="true">
+          <div class="valance"></div>
+        </div>
+        <div class="stage-floor" aria-hidden="true"></div>
+
+        <svg class="puppet-stage" data-hero-stage aria-label="A Kathakali-crowned astrologer marionette. Move your pointer to work its strings; click it to make it dance." role="img"></svg>
+        <div class="speech" data-speech role="status" aria-live="polite"></div>
+
+        <div class="hero-copy">
+          <p class="eyebrow deva">॥ कर्म · ग्रह · भाग्य ॥</p>
+          <h1>Who pulls the <em>strings</em> of your destiny?</h1>
+          <p class="lede">Your karma. Your grahas. And the choices you make next. Talk to <strong>5,000+ verified Vedic astrologers</strong>, tarot readers and numerologists, on chat, call or video. Your first consultation is <strong>free</strong>.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary btn-lg" href="#jyotishi"><span class="btn-icon" aria-hidden="true">💬</span> Chat with an Astrologer</a>
+            <a class="btn btn-paper btn-lg" href="#kundli">Generate Free Kundli</a>
+          </div>
+          <ul class="trust">
+            <li><strong>4.8★</strong><span>app rating</span></li>
+            <li><strong>2 Cr+</strong><span>consultations</span></li>
+            <li><strong>24×7</strong><span>astrologers online</span></li>
+          </ul>
+        </div>
+        <p class="puppet-hint" data-puppet-hint><span class="hint-dot"></span><span data-hint-text>Move your cursor. You're the puppeteer.</span></p>
+
+        <div class="curtain curtain-l" aria-hidden="true"><div class="curtain-trim"></div></div>
+        <div class="curtain curtain-r" aria-hidden="true"><div class="curtain-trim"></div></div>
+        <div class="curtain-title" aria-hidden="true">
+          <span data-art="diya" class="curtain-diya"></span>
+          <p class="deva">कर्मिक एस्ट्रो प्रस्तुत करता है</p>
+          <p>KarmicAstro presents</p>
+          <strong>The Theatre of Your Stars</strong>
+        </div>
+      </section>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>Live Chat</span><i data-art="fish-mini"></i><span>Call &amp; Video</span><i data-art="fish-mini"></i><span>Free Janam Kundli</span><i data-art="fish-mini"></i><span>Kundli Milan</span><i data-art="fish-mini"></i><span>Daily Panchang</span><i data-art="fish-mini"></i><span>Tarot</span><i data-art="fish-mini"></i><span>Numerology</span><i data-art="fish-mini"></i><span>Vastu</span><i data-art="fish-mini"></i><span>Remedies &amp; Puja</span><i data-art="fish-mini"></i>
+        </div>
+      </div>
+
+      <!-- ═════════════ Act I: Rashiphal ═════════════ -->
+      <section id="rashi" class="act act-rashi paper" data-chapter="Rashiphal" data-chapter-en="Daily horoscope">
+        <div class="rashi-pin">
+          <header class="act-head">
+            <p class="act-no"><span class="deva">प्रथम अंक</span> Act I</p>
+            <h2>Rashiphal: <em>your sign, today</em></h2>
+            <p class="act-sub">Scroll to turn the Rashi Chakra, or tap your sign. Readings follow the Moon's real transit through the sidereal zodiac today.</p>
+          </header>
+          <div class="rashi-layout">
+            <div class="wheel-wrap">
+              <svg class="rashi-wheel" viewBox="-320 -320 640 640" data-wheel role="group" aria-label="Rashi Chakra: choose your zodiac sign"></svg>
+              <div class="wheel-pointer" aria-hidden="true" data-art="diya"></div>
+            </div>
+            <article class="leaf-card" data-horoscope aria-live="polite">
+              <div class="leaf-tabs" role="tablist" aria-label="Day">
+                <button role="tab" aria-selected="true" data-day="0">Today</button>
+                <button role="tab" aria-selected="false" data-day="1">Tomorrow</button>
+                <button role="tab" aria-selected="false" data-day="weekly" class="tab-app">Weekly <small>in app</small></button>
+              </div>
+              <div class="leaf-body" data-horoscope-body></div>
+            </article>
+          </div>
+          <ol class="rashi-index" data-rashi-index aria-label="Jump to sign"></ol>
+        </div>
+      </section>
+
+      <!-- ═════════════ Act II: Navagraha ═════════════ -->
+      <section id="navagraha" class="act act-graha night" data-chapter="Navagraha" data-chapter-en="The nine planets">
+        <div class="graha-pin">
+          <header class="act-head light">
+            <p class="act-no"><span class="deva">द्वितीय अंक</span> Act II</p>
+            <h2>Navagraha: <em>the nine who move your story</em></h2>
+            <p class="act-sub">Each card shows where that graha is <strong>right now</strong> in the sidereal sky, calculated live in your browser.</p>
+          </header>
+          <div class="graha-rod" aria-hidden="true"></div>
+          <div class="graha-track" data-graha-track></div>
+        </div>
+      </section>
+
+      <!-- ═════════════ Act III: Janam Kundli ═════════════ -->
+      <section id="kundli" class="act act-kundli paper" data-chapter="Kundli" data-chapter-en="Free birth chart">
+        <header class="act-head">
+          <p class="act-no"><span class="deva">तृतीय अंक</span> Act III</p>
+          <h2>Janam Kundli: <em>draw your birth chart, free</em></h2>
+          <p class="act-sub">North Indian style chart with all nine grahas, Lagna, Rashi and Nakshatra, computed with Lahiri ayanamsa.</p>
+        </header>
+        <div class="kundli-layout">
+          <form class="kundli-form framed" data-kundli-form>
+            <h3>Your birth details</h3>
+            <label>Name<input name="name" type="text" placeholder="e.g. Aarav Sharma" autocomplete="name" /></label>
+            <div class="row-2">
+              <label>Date of birth<input name="date" type="date" required value="1996-03-14" /></label>
+              <label>Time (IST)<input name="time" type="time" required value="07:45" /></label>
+            </div>
+            <label>Place of birth<select name="place" data-city-select required></select></label>
+            <button class="btn btn-primary btn-block" type="submit">Draw my Kundli</button>
+            <p class="fineprint">Your details never leave this page. Everything is calculated on your device.</p>
+          </form>
+          <div class="kundli-result">
+            <div class="kundli-chart framed" data-kundli-chart></div>
+            <div class="kundli-facts" data-kundli-facts></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═════════════ Act IV: Jyotishis ═════════════ -->
+      <section id="jyotishi" class="act act-jyotishi velvet" data-chapter="Jyotishi" data-chapter-en="Astrologers">
+        <header class="act-head light">
+          <p class="act-no"><span class="deva">चतुर्थ अंक</span> Act IV</p>
+          <h2>Meet the Jyotishis: <em>verified, online, ready</em></h2>
+          <p class="act-sub">Every astrologer is interviewed and tested before joining. Choose by expertise, language and price.</p>
+        </header>
+        <div class="chips" role="toolbar" aria-label="Filter astrologers" data-filters>
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="love">Love</button>
+          <button class="chip" data-filter="career">Career</button>
+          <button class="chip" data-filter="marriage">Marriage</button>
+          <button class="chip" data-filter="vedic">Vedic</button>
+          <button class="chip" data-filter="tarot">Tarot</button>
+          <button class="chip" data-filter="numerology">Numerology</button>
+          <button class="chip" data-filter="vastu">Vastu</button>
+        </div>
+        <div class="astro-grid" data-astro-grid></div>
+      </section>
+
+      <!-- ═════════════ Act V: Kundli Milan ═════════════ -->
+      <section id="milan" class="act act-milan paper rose" data-chapter="Milan" data-chapter-en="Matchmaking">
+        <header class="act-head">
+          <p class="act-no"><span class="deva">पंचम अंक</span> Act V</p>
+          <h2>Kundli Milan: <em>will your stars hold hands?</em></h2>
+          <p class="act-sub">Ashtakoota Guna Milan from both Moon nakshatras: eight kootas, 36 gunas.</p>
+        </header>
+        <div class="milan-layout">
+          <div class="milan-stage framed">
+            <svg class="milan-svg" viewBox="0 0 800 560" data-milan-stage role="img" aria-label="Bride and groom marionettes. They move closer as the guna score rises."></svg>
+            <div class="milan-score" data-milan-score>
+              <span class="score-num" data-score-num>?</span><span class="score-den">/36</span>
+              <span class="score-label">gunas matched</span>
+            </div>
+          </div>
+          <form class="milan-form" data-milan-form>
+            <fieldset class="framed">
+              <legend><span class="dot boy"></span> Groom</legend>
+              <label>Name<input name="bname" type="text" value="Rohan" /></label>
+              <div class="row-2">
+                <label>Date of birth<input name="bdate" type="date" required value="1994-07-09" /></label>
+                <label>Time (IST)<input name="btime" type="time" required value="10:20" /></label>
+              </div>
+            </fieldset>
+            <fieldset class="framed">
+              <legend><span class="dot girl"></span> Bride</legend>
+              <label>Name<input name="gname" type="text" value="Ananya" /></label>
+              <div class="row-2">
+                <label>Date of birth<input name="gdate" type="date" required value="1996-11-02" /></label>
+                <label>Time (IST)<input name="gtime" type="time" required value="18:40" /></label>
+              </div>
+            </fieldset>
+            <button class="btn btn-primary btn-block" type="submit">Match Kundlis</button>
+          </form>
+        </div>
+        <div class="koota-grid" data-koota-grid aria-live="polite"></div>
+      </section>
+
+      <!-- ═════════════ Act VI: Panchang ═════════════ -->
+      <section id="panchang" class="act act-panchang night" data-chapter="Panchang" data-chapter-en="Today's almanac">
+        <header class="act-head light">
+          <p class="act-no"><span class="deva">षष्ठ अंक</span> Act VI</p>
+          <h2>Aaj ka Panchang: <em>today, in five limbs</em></h2>
+          <p class="act-sub">Tithi, Vaar, Nakshatra, Yoga and Karana for your city, plus the days ahead worth marking.</p>
+        </header>
+        <div class="panchang-layout">
+          <div class="moon-phase" data-moon-phase></div>
+          <div class="panchang-card framed-blue" data-panchang>
+            <div class="panchang-top">
+              <div>
+                <p class="p-date" data-p-date></p>
+                <p class="p-vaar deva" data-p-vaar></p>
+              </div>
+              <label class="p-city">City<select data-panchang-city></select></label>
+            </div>
+            <dl class="panchang-limbs" data-p-limbs></dl>
+            <div class="p-sun" data-p-sun></div>
+            <div class="p-upcoming" data-p-upcoming></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═════════════ Act VII: Seva ═════════════ -->
+      <section id="seva" class="act act-seva paper" data-chapter="Seva" data-chapter-en="Services">
+        <header class="act-head">
+          <p class="act-no"><span class="deva">सप्तम अंक</span> Act VII</p>
+          <h2>Everything your stars need, <em>in one app</em></h2>
+        </header>
+        <div class="seva-grid" data-seva-grid></div>
+        <ol class="steps">
+          <li class="framed"><span class="step-no">१</span><h3>Pick your Jyotishi</h3><p>Filter by language, expertise, rating and price per minute.</p></li>
+          <li class="framed"><span class="step-no">२</span><h3>Ask anything</h3><p>Chat, call or video. Your first session is free, and your details stay private.</p></li>
+          <li class="framed"><span class="step-no">३</span><h3>Walk your path</h3><p>Get clear guidance, simple remedies and a follow-up reminder.</p></li>
+        </ol>
+      </section>
+
+      <!-- ═════════════ Act VIII: Vani — shadow theatre ═════════════ -->
+      <section id="vani" class="act act-vani" data-chapter="Vani" data-chapter-en="Stories">
+        <header class="act-head light">
+          <p class="act-no"><span class="deva">अष्टम अंक</span> Act VIII</p>
+          <h2>Vani: <em>stories from our audience</em></h2>
+          <p class="act-sub">Performed in Tholu Bommalata, the leather shadow-puppet theatre of Andhra Pradesh.</p>
+        </header>
+        <div class="shadow-theatre">
+          <div class="shadow-screen" data-shadow-screen>
+            <svg class="shadow-svg" viewBox="0 0 900 460" data-shadow-svg aria-hidden="true"></svg>
+            <div class="lamp" data-art="diya" aria-hidden="true"></div>
+          </div>
+          <figure class="quote framed" data-quote aria-live="polite">
+            <blockquote data-quote-text></blockquote>
+            <figcaption><strong data-quote-name></strong><span data-quote-meta></span></figcaption>
+            <div class="quote-nav">
+              <button class="round-btn" data-quote-prev aria-label="Previous story">‹</button>
+              <div class="quote-dots" data-quote-dots></div>
+              <button class="round-btn" data-quote-next aria-label="Next story">›</button>
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ═════════════ Act IX: Samapan ═════════════ -->
+      <section id="app" class="act act-app paper" data-chapter="Samapan" data-chapter-en="Get the app">
+        <div class="app-layout">
+          <div class="app-copy">
+            <p class="act-no"><span class="deva">समापन</span> Finale</p>
+            <h2>Carry the whole <em>theatre of stars</em> in your pocket</h2>
+            <p class="lede dark">Daily rashiphal notifications, live astrologers in 12 Indian languages, Kundli PDFs and remedies, all in the KarmicAstro app.</p>
+            <ul class="stats" data-stats>
+              <li><strong data-count="5000" data-suffix="+">0</strong><span>verified astrologers</span></li>
+              <li><strong data-count="12" data-suffix="">0</strong><span>languages</span></li>
+              <li><strong data-count="4.8" data-suffix="★" data-decimals="1">0</strong><span>average rating</span></li>
+            </ul>
+            <div class="store-row">
+              <a class="store-btn" href="#app" aria-label="Download on the App Store (coming soon)"><span class="store-icon" aria-hidden="true"></span><span><small>Download on the</small>App Store</span></a>
+              <a class="store-btn" href="#app" aria-label="Get it on Google Play (coming soon)"><span class="store-icon play" aria-hidden="true"></span><span><small>Get it on</small>Google Play</span></a>
+            </div>
+          </div>
+          <div class="phone-wrap">
+            <div class="phone" aria-label="Preview of the KarmicAstro app" role="img">
+              <div class="phone-notch"></div>
+              <div class="phone-screen" data-phone-screen></div>
+            </div>
+            <div class="phone-fish" data-art="fish-pair"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="finale" aria-label="The end">
+        <div class="curtain curtain-l end" aria-hidden="true"><div class="curtain-trim"></div></div>
+        <div class="curtain curtain-r end" aria-hidden="true"><div class="curtain-trim"></div></div>
+        <div class="finale-copy framed">
+          <p class="deva big">॥ शुभमस्तु ॥</p>
+          <p>May all be auspicious. The stars have spoken; now it's your turn.</p>
+          <a class="btn btn-primary btn-lg" href="#jyotishi">Start your free consultation</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="#prastavana"><span class="brand-mark" data-art="sun-mini"></span><span class="brand-name">Karmic<span>Astro</span></span></a>
+          <p>Ancient Jyotish, live astrologers and a little theatre. Painted in Mithila style, strung like the puppets of the South.</p>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <a href="#jyotishi">Chat with Astrologer</a><a href="#jyotishi">Talk to Astrologer</a><a href="#kundli">Free Kundli</a><a href="#milan">Kundli Milan</a><a href="#rashi">Daily Horoscope</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="#app">About us</a><a href="#app">Join as Astrologer</a><a href="#app">Careers</a><a href="#app">Contact</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="#app">Terms of use</a><a href="#app">Privacy policy</a><a href="#app">Refund policy</a><a href="#app">Disclaimer</a>
+        </div>
+      </div>
+      <p class="disclaimer">Astrology offers guidance, not guarantees. Readings on this page are generated for demonstration, and consultations are not a substitute for medical, legal or financial advice. KarmicAstro is a placeholder brand; astrologer names, ratings and figures shown are illustrative.</p>
+      <p class="copyright">© 2026 KarmicAstro · Madhubani motifs &amp; South Indian puppetry, hand-drawn in SVG.</p>
+    </footer>
+
+    <!-- ═════════════ Film bar: play the page like a video ═════════════ -->
+    <div class="filmbar" data-filmbar role="region" aria-label="Story player">
+      <button class="fb-play" data-fb-play aria-label="Play the story" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-play" d="M8 5v14l11-7z"/><path class="i-pause" d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+      </button>
+      <div class="fb-meta">
+        <span class="fb-chapter" data-fb-chapter>Prastavana</span>
+        <span class="fb-time" data-fb-time>00:00 / 00:00</span>
+      </div>
+      <div class="fb-track" data-fb-track role="slider" aria-label="Story progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+        <div class="fb-fill" data-fb-fill></div>
+        <div class="fb-ticks" data-fb-ticks></div>
+      </div>
+      <button class="fb-sound" data-fb-sound aria-label="Turn on tanpura music" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path class="i-wave" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="i-mute" d="M16 9l6 6M22 9l-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <!-- ═════════════ Chat demo ═════════════ -->
+    <dialog class="chat" data-chat aria-label="Chat with astrologer">
+      <header class="chat-head">
+        <div class="chat-avatar" data-chat-avatar></div>
+        <div><strong data-chat-name></strong><span class="online">● Online · <span data-chat-price></span></span></div>
+        <button class="round-btn" data-chat-close aria-label="Close chat">✕</button>
+      </header>
+      <div class="chat-log" data-chat-log aria-live="polite"></div>
+      <form class="chat-input" data-chat-form>
+        <input name="msg" type="text" placeholder="Ask about career, love, marriage…" autocomplete="off" aria-label="Your message" />
+        <button class="btn btn-primary btn-sm" type="submit">Send</button>
+      </form>
+      <p class="chat-note">Demo conversation. Real consultations happen in the KarmicAstro app.</p>
+    </dialog>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
