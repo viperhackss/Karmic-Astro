@@ -1,6 +1,5 @@
-// Rashi glyphs drawn as Madhubani double lines inside patterned roundels.
+// Rashi glyphs as gold paper cut-outs on small night-paper discs.
 import { C } from './palette.js';
-import { triRing, dotRing } from './motifs.js';
 
 export const GLYPHS = {
   aries: 'M4,10 C3,5 7,3 9,5 C11,7 12,10 12,20 M20,10 C21,5 17,3 15,5 C13,7 12,10 12,20',
@@ -17,36 +16,20 @@ export const GLYPHS = {
   pisces: 'M6,3 C11,8 11,16 6,21 M18,3 C13,8 13,16 18,21 M5,12 H19',
 };
 
-const ELEMENT_COLORS = {
-  fire: { ring: C.red, a: C.yellow, b: C.orange, fill: '#fbd9a0' },
-  earth: { ring: C.green, a: C.yellow, b: C.red, fill: '#e9e2b0' },
-  air: { ring: C.yellow, a: C.red, b: C.pink, fill: '#fbe9c4' },
-  water: { ring: C.blue, a: C.yellow, b: C.paper, fill: '#d9e1f2' },
-};
-
-export function glyphGroup(key, { scale = 4, color = C.ink, bg = C.paper } = {}) {
-  const d = GLYPHS[key];
-  return `<g transform="scale(${scale}) translate(-12 -12)">
-    <path d="${d}" fill="none" stroke="${color}" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="${d}" fill="none" stroke="${bg}" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></g>`;
+export function glyphGroup(key, { scale = 4, color = C.gold, width = 2.2 } = {}) {
+  return `<g transform="scale(${scale}) translate(-12 -12)"><path d="${GLYPHS[key]}" fill="none" stroke="${color}" stroke-width="${width}" stroke-linecap="round" stroke-linejoin="round"/></g>`;
 }
 
-export const rashiMedallion = (rashi, cls = '') =>
-  `<svg class="mb ${cls}" viewBox="-100 -100 200 200" aria-hidden="true">${rashiMedallionGroup(rashi)}</svg>`;
+export const glyphIcon = (key, cls = '', color = 'currentColor') =>
+  `<svg class="art ${cls}" viewBox="-14 -14 28 28" aria-hidden="true">${glyphGroup(key, { scale: 1, color, width: 2.4 })}</svg>`;
 
-export const glyphIcon = (key, cls = '') =>
-  `<svg class="mb ${cls}" viewBox="-14 -14 28 28" aria-hidden="true">${glyphGroup(key, { scale: 1 })}</svg>`;
-
-/** Inner markup of a rashi roundel, centred on (0,0) with radius ~100. */
-export function rashiMedallionGroup(rashi) {
-  const c = ELEMENT_COLORS[rashi.element];
-  return `
-    <circle r="96" fill="${c.ring}" stroke="${C.ink}" stroke-width="3.4"/>
-    ${triRing(24, 78, 95, c.a, c.b, 1.4)}
-    <circle r="78" fill="${c.fill}" stroke="${C.ink}" stroke-width="3.4"/>
-    <circle r="72" fill="none" stroke="${C.ink}" stroke-width="1.3"/>
-    ${dotRing(28, 75, 1.4)}
-    <circle r="56" fill="${C.paper}" stroke="${C.ink}" stroke-width="2"/>
-    <circle r="56" fill="url(#mb-dots)" opacity=".35"/>
-    ${glyphGroup(rashi.key, { scale: 3.4 })}`;
+/** Small paper disc with a cut glyph, centred on (0,0), radius ~100. */
+export function rashiDisc(rashi, { active = false } = {}) {
+  return `<circle r="96" cy="8" fill="${C.edge}"/>
+    <circle r="96" fill="${active ? C.gold : C.n2}"/>
+    <circle r="80" fill="none" stroke="${active ? C.goldDeep : C.n4}" stroke-width="3"/>
+    ${glyphGroup(rashi.key, { scale: 4.4, color: active ? C.n1 : C.gold, width: 2.1 })}`;
 }
+
+export const rashiBadge = (rashi, cls = '') =>
+  `<svg class="art ${cls}" viewBox="-104 -104 208 216" aria-hidden="true"><g filter="url(#paper-sm)">${rashiDisc(rashi, { active: true })}</g></svg>`;

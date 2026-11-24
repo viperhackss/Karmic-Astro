@@ -4,22 +4,22 @@ import { bust } from '../puppet/costumes.js';
 import { C } from '../art/palette.js';
 
 export const ASTROLOGERS = [
-  { name: 'Acharya Raghav Shastri', skills: 'Vedic · KP · Prashna', langs: 'Hindi, English, Sanskrit', exp: 18, rating: 4.9, orders: '21k', price: 32, was: 45, tags: ['vedic', 'career', 'marriage'], hue: C.red, status: 'online', badge: 'Top choice',
-    look: { headwear: 'shikha', mark: 'tripundra', beard: true, beardColor: '#f3ecdf', moustache: false, robe: C.yellow } },
-  { name: 'Meera Iyer', skills: 'Tarot · Love · Angel cards', langs: 'English, Tamil', exp: 9, rating: 4.8, orders: '12k', price: 25, was: 30, tags: ['tarot', 'love'], hue: C.blue, status: 'online',
-    look: { headwear: 'bun', mark: 'bindi', lashes: true, skin: '#c97c41', robe: C.pink } },
-  { name: 'Pt. Devdutt Mishra', skills: 'Vedic · Vastu · Muhurat', langs: 'Hindi, Maithili, Bhojpuri', exp: 22, rating: 4.9, orders: '30k', price: 40, was: 52, tags: ['vedic', 'vastu', 'marriage'], hue: C.green, status: 'busy', badge: 'Madhubani',
-    look: { headwear: 'turban', turbanColor: C.orange, turbanStripe: 'mb-hatch-red', plume: false, mark: 'tilak', moustache: true, robe: C.red } },
-  { name: 'Lakshmi Narayanan', skills: 'Numerology · Nadi astrology', langs: 'Tamil, Telugu, English', exp: 14, rating: 4.7, orders: '9k', price: 28, was: 35, tags: ['numerology', 'career'], hue: C.orange, status: 'online',
-    look: { headwear: 'bun', mark: 'namam', skin: '#b8703a', nath: true, robe: C.green } },
-  { name: 'Harpreet Kaur', skills: 'Palmistry · Face reading', langs: 'Punjabi, Hindi, English', exp: 11, rating: 4.8, orders: '7k', price: 22, was: 28, tags: ['love', 'career'], hue: C.pink, status: 'online',
-    look: { headwear: 'veil', veilColor: C.orange, mark: 'none', lashes: true, skin: '#e0a066', robe: C.blue } },
-  { name: 'Anirban Sen', skills: 'KP · Career · Finance', langs: 'Bengali, English, Hindi', exp: 16, rating: 4.8, orders: '15k', price: 30, was: 38, tags: ['career', 'vedic'], hue: C.indigo, status: 'online',
-    look: { headwear: 'none', mark: 'tilak', glasses: true, moustache: true, robe: C.yellow } },
-  { name: 'Sushila Hegde', skills: 'Yakshagana-trained Prashna · Remedies', langs: 'Kannada, Konkani, Hindi', exp: 20, rating: 4.9, orders: '18k', price: 35, was: 42, tags: ['vedic', 'marriage', 'love'], hue: '#7a2a8a', status: 'busy',
-    look: { headwear: 'kireetam', halo: false, mark: 'bindi', chutti: true, skin: '#d08143', robe: C.red } },
-  { name: 'Rohan Kapoor', skills: 'Vedic · Vastu for business', langs: 'English, Hindi', exp: 7, rating: 4.6, orders: '4k', price: 18, was: 24, tags: ['vastu', 'career', 'numerology'], hue: '#1f6f9a', status: 'online', badge: 'Rising star',
-    look: { headwear: 'none', mark: 'none', moustache: false, beard: true, beardColor: '#2a1a14', skin: '#d99a62', robe: C.green } },
+  { name: 'Acharya Raghav Shastri', skills: 'Vedic · KP · Prashna', langs: 'Hindi, English, Sanskrit', exp: 18, rating: 4.9, orders: '21k', price: 32, was: 45, tags: ['vedic', 'career', 'marriage'], hue: C.n5, status: 'online', badge: 'Top choice',
+    look: { headwear: 'shikha', mark: 'tripundra', beard: true, robe: C.saffron } },
+  { name: 'Meera Iyer', skills: 'Tarot · Love · Angel cards', langs: 'English, Tamil', exp: 9, rating: 4.8, orders: '12k', price: 25, was: 30, tags: ['tarot', 'love'], hue: C.rose, status: 'online',
+    look: { headwear: 'bun', mark: 'bindi', lashes: true, skin: '#c98a55', robe: C.n4 } },
+  { name: 'Pt. Devdutt Mishra', skills: 'Vedic · Vastu · Muhurat', langs: 'Hindi, Maithili, Bhojpuri', exp: 22, rating: 4.9, orders: '30k', price: 40, was: 52, tags: ['vedic', 'vastu', 'marriage'], hue: C.teal, status: 'busy',
+    look: { headwear: 'turban', turbanColor: C.saffron, plume: false, mark: 'tilak', moustache: true, robe: C.n4 } },
+  { name: 'Lakshmi Narayanan', skills: 'Numerology · Nadi astrology', langs: 'Tamil, Telugu, English', exp: 14, rating: 4.7, orders: '9k', price: 28, was: 35, tags: ['numerology', 'career'], hue: C.gold, status: 'online',
+    look: { headwear: 'bun', mark: 'namam', skin: '#b8743f', shade: '#94572b', nath: true, robe: C.coral } },
+  { name: 'Harpreet Kaur', skills: 'Palmistry · Face reading', langs: 'Punjabi, Hindi, English', exp: 11, rating: 4.8, orders: '7k', price: 22, was: 28, tags: ['love', 'career'], hue: C.lilac, status: 'online',
+    look: { headwear: 'veil', veilColor: C.saffron, mark: 'none', lashes: true, skin: '#e3a676', robe: C.n4 } },
+  { name: 'Anirban Sen', skills: 'KP · Career · Finance', langs: 'Bengali, English, Hindi', exp: 16, rating: 4.8, orders: '15k', price: 30, was: 38, tags: ['career', 'vedic'], hue: C.sky, status: 'online',
+    look: { headwear: 'none', mark: 'tilak', glasses: true, moustache: true, robe: C.n3 } },
+  { name: 'Sushila Hegde', skills: 'Prashna · Remedies', langs: 'Kannada, Konkani, Hindi', exp: 20, rating: 4.9, orders: '18k', price: 35, was: 42, tags: ['vedic', 'marriage', 'love'], hue: C.saffron, status: 'busy',
+    look: { headwear: 'kireetam', mark: 'bindi', chutti: true, skin: '#d08a52', robe: C.n4 } },
+  { name: 'Rohan Kapoor', skills: 'Vedic · Vastu for business', langs: 'English, Hindi', exp: 7, rating: 4.6, orders: '4k', price: 18, was: 24, tags: ['vastu', 'career', 'numerology'], hue: C.coral, status: 'online', badge: 'Rising star',
+    look: { headwear: 'none', mark: 'none', beard: true, beardColor: '#2a1f3d', skin: '#d99a62', robe: C.n3 } },
 ];
 
 const REPLIES = [
@@ -35,24 +35,24 @@ export function initAstrologers(ctx) {
   const filters = [...document.querySelectorAll('[data-filter]')];
 
   grid.innerHTML = ASTROLOGERS.map((a, i) => `
-    <article class="astro-card" style="--i:${i};--hue:${a.hue}" data-tags="${a.tags.join(' ')}">
+    <article class="card astro-card" style="--hue:${a.hue}" data-tags="${a.tags.join(' ')}">
       <div class="astro-top">
-        <span class="status ${a.status === 'busy' ? 'busy' : ''}">${a.status === 'busy' ? 'Busy · ~4 min' : 'Online'}</span>
-        ${a.badge ? `<span class="astro-badge">${a.badge}</span>` : ''}
-        <div class="arch">${bust(a.look)}</div>
+        <div class="avatar">${bust(a.look)}</div>
+        <div>
+          <h3>${a.name}</h3>
+          <span class="status ${a.status === 'busy' ? 'busy' : ''}">${a.status === 'busy' ? 'In a session · ~4 min' : 'Online now'}</span>
+        </div>
+        ${a.badge ? `<span class="badge">${a.badge}</span>` : ''}
       </div>
-      <div class="astro-body">
-        <h3>${a.name}</h3>
-        <p class="astro-skills">${a.skills}</p>
-        <p class="astro-meta">${a.langs} · ${a.exp} yrs</p>
-        <div class="astro-rate">
-          <span class="stars" aria-label="${a.rating} out of 5">★★★★★<small>${a.rating} (${a.orders})</small></span>
-          <span class="price"><s>₹${a.was}</s>₹${a.price}/min</span>
-        </div>
-        <div class="astro-actions">
-          <button class="btn btn-primary" data-chat-open="${i}">Chat</button>
-          <button class="btn btn-paper" data-call-open="${i}">Call</button>
-        </div>
+      <p class="astro-skills">${a.skills}</p>
+      <p class="astro-meta">${a.langs} · ${a.exp} yrs experience</p>
+      <div class="astro-rate">
+        <span class="rating" aria-label="Rated ${a.rating} out of 5"><i>★</i> ${a.rating} <small>(${a.orders})</small></span>
+        <span class="price"><s>₹${a.was}</s>₹${a.price}/min</span>
+      </div>
+      <div class="astro-actions">
+        <button class="btn btn-primary" data-chat-open="${i}">Chat</button>
+        <button class="btn btn-ghost" data-call-open="${i}">Call</button>
       </div>
     </article>`).join('');
 

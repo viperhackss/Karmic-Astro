@@ -2,7 +2,7 @@
 
 **Who pulls the strings of your destiny?**
 
-KarmicAstro (placeholder name) is the landing page for a live astrology consultation app in the spirit of Astrotalk: chat, call or video with Vedic astrologers, plus free Kundli, Kundli Milan, daily Rashiphal and Panchang. The page plays like a short film. It is painted in **Madhubani (Mithila)** style and performed by **South Indian puppets**.
+KarmicAstro (placeholder name) is the landing page for a live astrology consultation app: chat, call or video with Vedic astrologers, plus free Kundli, Kundli Milan, daily Rashiphal and Panchang. The page plays like a short film, staged as a **papercut puppet show among the stars**.
 
 ```bash
 npm install
@@ -17,33 +17,26 @@ The page is a theatre programme in ten acts. A **film bar** at the bottom lets v
 
 | Act | Section | What happens |
 |---|---|---|
-| Prologue | Hero stage | Curtains part and a Kathakali-crowned **Jyotishi marionette** drops in on its strings. Your cursor (or finger) is the puppeteer's controller. Click the puppet to make it dance and speak. |
-| I · Rashiphal | Daily horoscope | Scrolling turns the Madhubani **Rashi Chakra**. The sign under the diya gets a palm-leaf reading built from the Moon's real transit today. |
-| II · Navagraha | Nine planets | Graha cards hang from a rod and slide sideways as you scroll, swaying with scroll speed. Each shows where the graha is **right now** and whether it is vakri (retrograde). |
+| Prologue | Hero stage | Paper clouds sink away and a papercut **Jyotishi marionette** drops in on its strings. Your cursor (or finger) is the puppeteer's controller. Click the puppet to make it dance and speak. |
+| I · Rashiphal | Daily horoscope | Scrolling turns a stacked-paper **zodiac wheel**. The sign under the gold star gets a reading built from the Moon's real transit today. |
+| II · Navagraha | Nine planets | Papercut planet cards hang from a glowing rail and slide sideways as you scroll, swaying with scroll speed. Each shows where the graha is **right now** and whether it is vakri (retrograde). |
 | III · Kundli | Free birth chart | North Indian diamond chart with all nine grahas, Lagna, Rashi, Nakshatra and Tithi. |
 | IV · Jyotishi | Astrologers | Filterable astrologer cards hang on strings. Chat/Call open a demo consultation. |
 | V · Milan | Matchmaking | Ashtakoota Guna Milan (36 gunas). Bride and groom puppets walk closer as the score rises and dance if it's auspicious. |
 | VI · Panchang | Today | Tithi, Vaar, Nakshatra, Yoga, Karana, sunrise and sunset for 31 cities, tonight's real moon phase, and the next Ekadashi, Purnima and Amavasya. |
-| VII · Seva | Services | Madhubani tiles for every product line. |
-| VIII · Vani | Testimonials | Performed as **Tholu Bommalata** leather shadow puppets against a lamp-lit screen. |
-| Finale | App | App preview, store buttons, and the curtain falls: *॥ शुभमस्तु ॥*. |
+| VII · Seva | Services | Papercut icon tiles for every product line. |
+| VIII · Vani | Testimonials | Told by papercut **shadow puppets** against a lamp-lit screen. |
+| Finale | App | App preview, store buttons, and paper clouds rise to close the show: *॥ शुभमस्तु ॥*. |
 
 ## Art direction
 
-**Madhubani / Mithila painting (Bihar).** Every motif is hand-written SVG in `src/art/`: the fish pair (good fortune), Surya and Chandra faces, lotus, kalash, diya, peacock, parrot, tree of life, the Navagraha emblems and the twelve rashi roundels. They follow the tradition's grammar:
-- the signature **double outline** (two ink lines with a paper gap)
-- **kachni** hatching beside **bharni** solid fills
-- no empty space
-- the natural-pigment palette: lamp-black, sindoor red, turmeric, leaf green, indigo and kusum pink on handmade paper
+**Papercut cosmos.** Every illustration is a flat sheet of coloured card: a crisp edge shadow for paper thickness and a soft drop shadow for depth. Night-paper layers (indigo to violet) are lit by gold, saffron and rose. It is all hand-written SVG in `src/art/cosmos.js`: planets, moon, sunburst, rolling cloud bands, paper stars and service icons.
 
-Borders, frames and paper grain are generated as SVG tiles (`src/art/borders.js`) and used through CSS `border-image` and backgrounds.
+- A fixed canvas **starfield** (`src/art/starfield.js`) runs behind the whole page. Three depth layers drift at different speeds as you scroll, stars twinkle, and shooting stars cross now and then.
+- The hero opens with paper clouds sinking away layer by layer. Paper stars dangle on threads, orbits turn, and layered hills shift with the pointer.
+- Type: Instrument Serif headlines, Manrope text, Tiro Devanagari Hindi for small Hindi accents.
 
-**Puppetry.** *Kathputli* is strictly the Rajasthani string-puppet tradition. For the South Indian feel, the puppets draw on its southern cousins:
-- **Bommalattam** (Tamil Nadu) and **Gombeyata** (Karnataka) string puppets
-- **Kathakali/Yakshagana** costume cues: the tall *kireetam* crown, halo disc, the white *chutti* frill along the jaw, kohl-lined eyes and the Vaishnava *namam*
-- **Tholu Bommalata** (Andhra Pradesh) for the translucent, perforated leather shadow puppets in Act VIII
-
-The marionettes (`src/puppet/marionette.js`) are real physics. Verlet particles hang the head and hands from a kinematic wooden controller on rope constraints. The body swings as a pendulum, the skirt lags on a damped spring so it flares when the puppet twirls, the eyes follow you and blink, and "dances" are string flicks.
+**Puppetry.** The marionettes (`src/puppet/`) are papercut puppets joined by brass split-pins. They keep a quiet nod to South Indian string and leather puppetry: a tall kireetam crown, a sunburst halo and a jaw-band. They run on real physics: Verlet particles hang the head and hands from a kinematic controller on rope constraints. The body swings as a pendulum, the skirt lags on a spring and flares, the eyes follow you, and "dances" are string flicks. The testimonials are told by perforated papercut shadow puppets, after the Tholu Bommalata of Andhra Pradesh.
 
 ## The astrology is real
 
@@ -57,11 +50,11 @@ Everything runs in the browser. Birth details never leave the page.
 
 ## Tech
 
-Vite (vanilla JS, no framework) · GSAP + ScrollTrigger for pins and scrubbing · Lenis smooth scroll · Web Audio for sound · self-hosted fonts (Rozha One, Yatra One, Mukta) with Devanagari support.
+Vite (vanilla JS, no framework) · GSAP + ScrollTrigger for pins and scrubbing · Lenis smooth scroll · Canvas starfield · Web Audio for sound · self-hosted fonts (Instrument Serif, Manrope, Tiro Devanagari Hindi).
 
 ```
 src/
-  art/        Madhubani motifs, zodiac glyphs, border tiles, shared SVG patterns
+  art/        papercut cosmos (planets, clouds, icons), zodiac glyphs, starfield, SVG defs
   puppet/     marionette rig (Verlet) and costume parts
   astro/      ephemeris, panchang, matching, horoscope, reference tables
   sections/   one module per act

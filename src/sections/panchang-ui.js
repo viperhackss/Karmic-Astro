@@ -1,10 +1,10 @@
-// Act VI — Aaj ka Panchang with a Madhubani moon showing tonight's real phase.
+// Act VI — Aaj ka Panchang with a papercut moon showing tonight's real phase.
 import { panchang, tithiOf } from '../astro/panchang.js';
 import { siderealPositions } from '../astro/ephemeris.js';
 import { CITIES } from '../astro/data.js';
 import { fillCities } from './kundli.js';
 import { C } from '../art/palette.js';
-import { flower, triRing, dotRing } from '../art/motifs.js';
+import { starPath } from '../art/cosmos.js';
 
 const VAAR_DEVA = ['रविवार', 'सोमवार', 'मंगलवार', 'बुधवार', 'गुरुवार', 'शुक्रवार', 'शनिवार'];
 
@@ -23,28 +23,24 @@ function moonSVG(elong) {
   let shadow;
   if (waxing) shadow = `M0,${-r} A${r},${r} 0 0 0 0,${r} A${rx},${r} 0 0 ${k > 0 ? 0 : 1} 0,${-r} Z`;
   else shadow = `M0,${-r} A${r},${r} 0 0 1 0,${r} A${rx},${r} 0 0 ${k < 0 ? 0 : 1} 0,${-r} Z`;
-  return `<svg viewBox="-170 -170 340 340" class="mb" role="img" aria-label="Tonight's moon phase">
-    ${triRing(48, 150, 168, C.yellow, C.paper, 1.4)}
-    <circle r="150" fill="${C.indigo}" stroke="${C.ink}" stroke-width="3"/>
-    ${dotRing(48, 140, 1.8, C.yellow)}
-    <circle r="${r}" fill="#f7efd9" stroke="${C.ink}" stroke-width="4"/>
-    <circle r="${r}" fill="url(#mb-dots)" opacity=".12"/>
-    <g>
-      <path d="M-58,-34 Q-40,-50 -22,-36" fill="none" stroke="${C.ink}" stroke-width="5" stroke-linecap="round"/>
-      <path d="M22,-36 Q40,-50 58,-34" fill="none" stroke="${C.ink}" stroke-width="5" stroke-linecap="round"/>
-      <path d="M-56,-16 Q-40,-28 -24,-16 Q-40,-8 -56,-16 Z" fill="#fff" stroke="${C.ink}" stroke-width="3"/>
-      <circle cx="-40" cy="-17" r="5.5" fill="${C.ink}"/>
-      <path d="M24,-16 Q40,-28 56,-16 Q40,-8 24,-16 Z" fill="#fff" stroke="${C.ink}" stroke-width="3"/>
-      <circle cx="40" cy="-17" r="5.5" fill="${C.ink}"/>
-      <path d="M2,-14 Q-6,14 -4,20 Q2,24 9,20" fill="none" stroke="${C.ink}" stroke-width="3" stroke-linecap="round"/>
-      <path d="M-18,44 Q0,36 18,44 Q0,58 -18,44 Z" fill="${C.red}" stroke="${C.ink}" stroke-width="2.4"/>
-      <circle cx="0" cy="-58" r="6" fill="${C.red}"/>
-      <circle cx="-62" cy="18" r="11" fill="${C.pink}" opacity=".35"/><circle cx="62" cy="18" r="11" fill="${C.pink}" opacity=".35"/>
+  let ring = '';
+  for (let i = 0; i < 30; i++) {
+    const a = (i / 30) * Math.PI * 2;
+    ring += `<circle cx="${(Math.cos(a) * 156).toFixed(1)}" cy="${(Math.sin(a) * 156).toFixed(1)}" r="${i % 5 ? 1.4 : 2.6}" fill="${i % 5 ? C.mist : C.gold}" opacity="${i % 5 ? 0.45 : 0.9}"/>`;
+  }
+  return `<svg viewBox="-175 -175 350 350" class="art" role="img" aria-label="Tonight's moon phase">
+    <circle r="170" fill="url(#g-halo)" opacity=".25"/>
+    ${ring}
+    <g filter="url(#paper)">
+      <circle r="${r}" cy="6" fill="${C.edge}"/>
+      <circle r="${r}" fill="${C.paper}"/>
+      <circle cx="-40" cy="-30" r="20" fill="#e6dac2"/><circle cx="34" cy="36" r="14" fill="#e6dac2"/>
+      <circle cx="44" cy="-48" r="9" fill="#e6dac2"/><circle cx="-24" cy="58" r="10" fill="#e6dac2"/>
+      <circle cx="-70" cy="30" r="7" fill="#e6dac2"/>
+      <path d="${shadow}" fill="${C.n2}" opacity=".93"/>
     </g>
-    <path d="${shadow}" fill="${C.indigo}" opacity=".84"/>
-    <path d="${shadow}" fill="url(#mb-hatch-paper)" opacity=".18"/>
-    <circle r="${r}" fill="none" stroke="${C.ink}" stroke-width="4"/>
-    ${flower(-150, -120, 14, C.yellow, C.paper, C.red)}${flower(140, 128, 12, C.yellow, C.paper, C.red)}
+    <path d="${starPath(-140, -110, 12, 4, 0.34)}" fill="${C.gold}"/>
+    <path d="${starPath(134, 120, 9, 4, 0.34)}" fill="${C.mist}"/>
   </svg>`;
 }
 
@@ -77,7 +73,7 @@ export function initPanchang() {
     const now = new Date();
     const p = panchang(now, place);
     card.querySelector('[data-p-date]').textContent = fmtDate(now, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
-    card.querySelector('[data-p-vaar]').textContent = `${VAAR_DEVA[VAAR_INDEX(p.vaar.en)]} · ${p.vaar.hi}`;
+    card.querySelector('[data-p-vaar]').innerHTML = `<span class="deva">${VAAR_DEVA[VAAR_INDEX(p.vaar.en)]}</span> ${p.vaar.hi}`;
     card.querySelector('[data-p-limbs]').innerHTML = `
       <div><dt>Tithi</dt><dd>${p.tithi.name}<small>${p.tithi.paksha} paksha</small></dd></div>
       <div><dt>Nakshatra</dt><dd>${p.nakshatra.name}<small>pada ${p.nakshatra.pada}</small></dd></div>
@@ -85,7 +81,7 @@ export function initPanchang() {
       <div><dt>Karana</dt><dd>${p.karana}<small>half-tithi</small></dd></div>
       <div><dt>Vaar</dt><dd>${p.vaar.hi}<small>${p.vaar.en}</small></dd></div>
       <div><dt>Chandra Rashi</dt><dd>${p.moonRashi.sa}<small>${p.moonRashi.en}</small></dd></div>`;
-    card.querySelector('[data-p-sun]').innerHTML = `<span>☀ Sunrise <b>${fmtTime(p.sunrise)}</b></span><span>☾ Sunset <b>${fmtTime(p.sunset)}</b></span><span>📍 ${place.name}</span>`;
+    card.querySelector('[data-p-sun]').innerHTML = `<span>Sunrise <b>${fmtTime(p.sunrise)}</b></span><span>Sunset <b>${fmtTime(p.sunset)}</b></span><span>${place.name}</span>`;
     const up = upcoming(now);
     card.querySelector('[data-p-upcoming]').innerHTML = `<h4>Days to mark</h4><ul>${up
       .map((u) => `<li><strong>${u.paksha === 'Shukla' && u.name === 'Ekadashi' ? 'Shukla ' : u.name === 'Ekadashi' ? 'Krishna ' : ''}${u.name}</strong>${fmtDate(u.date, { weekday: 'short', day: 'numeric', month: 'short' })} · in ${u.inDays} day${u.inDays > 1 ? 's' : ''}</li>`)

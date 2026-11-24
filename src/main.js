@@ -9,8 +9,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 
 import { installDefs } from './art/defs.js';
-import { installBorders } from './art/borders.js';
 import { paintArt } from './art/registry.js';
+import { initStarfield } from './art/starfield.js';
 import { Sound } from './audio/tanpura.js';
 import { initHero } from './sections/hero.js';
 import { initRashi } from './sections/rashi.js';
@@ -29,7 +29,7 @@ gsap.registerPlugin(ScrollTrigger);
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 installDefs();
-installBorders();
+initStarfield({ reduced });
 paintArt();
 
 // Smooth scrolling, synced to GSAP's ticker so pins and puppets share a clock.
@@ -89,10 +89,6 @@ nav.addEventListener('click', (e) => {
     nav.classList.remove('open');
   }
 });
-
-// Duplicate the ticker content for a seamless marquee.
-const tickerTrack = document.querySelector('.ticker-track');
-tickerTrack.innerHTML += tickerTrack.innerHTML;
 
 // Curtain up once fonts are ready.
 const start = () => {

@@ -1,8 +1,5 @@
-// Self-hosted fonts (Latin + Devanagari subsets).
-import '@fontsource/rozha-one/400.css';
-import '@fontsource/yatra-one/400.css';
-import '@fontsource/mukta/400.css';
-import '@fontsource/mukta/500.css';
-import '@fontsource/mukta/600.css';
-import '@fontsource/mukta/700.css';
-import '@fontsource/mukta/800.css';
+// Self-hosted fonts: Instrument Serif (display), Manrope (text), Tiro Devanagari Hindi (accents).
+import '@fontsource/instrument-serif/400.css';
+import '@fontsource/instrument-serif/400-italic.css';
+import '@fontsource-variable/manrope/wght.css';
+import '@fontsource/tiro-devanagari-hindi/devanagari-400.css';

@@ -2,7 +2,7 @@
 import { CITIES, RASHIS, GRAHA_BY_KEY } from '../astro/data.js';
 import { birthChart } from '../astro/panchang.js';
 import { C } from '../art/palette.js';
-import { triRing } from '../art/motifs.js';
+import { starPath } from '../art/cosmos.js';
 
 // House centroids and sign-number anchors for a 400×400 chart.
 const CENTRE = [
@@ -14,8 +14,8 @@ const NUM = [
   [200, 226], [300, 318], [318, 300], [226, 200], [318, 100], [300, 84],
 ];
 const PLANET_COLOR = {
-  sun: '#c25410', moon: '#1f4e9c', mars: C.red, mercury: C.green, jupiter: '#b07a00',
-  venus: '#c2326a', saturn: C.indigo, rahu: '#4a4f63', ketu: '#7a4a1f',
+  sun: C.saffron, moon: C.paper, mars: C.coral, mercury: C.teal, jupiter: C.gold,
+  venus: C.rose, saturn: C.sky, rahu: C.lilac, ketu: C.mist,
 };
 
 const LAGNA_TEXT = [
@@ -51,7 +51,7 @@ function chartSVG(chart) {
   for (let h = 0; h < 12; h++) {
     const sign = ((lagna + h) % 12) + 1;
     const [nx, ny] = NUM[h];
-    houses += `<text x="${nx}" y="${ny + 6}" text-anchor="middle" class="k-num" font-size="17" font-weight="800" fill="${C.red}">${sign}</text>`;
+    houses += `<text x="${nx}" y="${ny + 6}" text-anchor="middle" class="k-num" font-size="15" font-weight="700" fill="${C.lilac}" opacity=".75">${sign}</text>`;
     const list = byHouse[h].slice();
     if (h === 0) list.unshift({ key: 'asc', degree: chart.lagna.degree });
     const [cx, cy] = CENTRE[h];
@@ -59,20 +59,20 @@ function chartSVG(chart) {
     list.forEach((p, k) => {
       const y = cy + (k - (list.length - 1) / 2) * lh + 5;
       const label = p.key === 'asc' ? 'Asc' : GRAHA_BY_KEY[p.key].abbr;
-      const color = p.key === 'asc' ? C.ink : PLANET_COLOR[p.key];
+      const color = p.key === 'asc' ? C.gold : PLANET_COLOR[p.key];
       houses += `<text class="k-planet" style="--i:${h + k}" x="${cx}" y="${y}" text-anchor="middle" font-size="${list.length > 3 ? 15 : 19}" font-weight="800" fill="${color}">${label}<tspan font-size="12" font-weight="600" dx="2">${Math.floor(p.degree)}°</tspan></text>`;
     });
   }
-  return `<svg viewBox="-24 -24 448 448" role="img" aria-label="North Indian style birth chart">
-    <rect x="-24" y="-24" width="448" height="448" fill="${C.paper}"/>
-    <rect x="0" y="0" width="400" height="400" fill="#fffaf0"/>
-    <path d="M200,0 L400,200 L200,400 L0,200 Z" fill="#fdf0d5"/>
-    <g fill="none" stroke="${C.ink}" stroke-linecap="round">
-      <path class="k-line" d="M0,0 H400 V400 H0 Z" stroke-width="4"/>
-      <path class="k-line" d="M0,0 L400,400 M400,0 L0,400" stroke-width="2.6"/>
-      <path class="k-line" d="M200,0 L400,200 L200,400 L0,200 Z" stroke-width="2.6"/>
+  return `<svg viewBox="-6 -6 412 412" role="img" aria-label="North Indian style birth chart">
+    <rect x="0" y="0" width="400" height="400" rx="6" fill="rgba(7,6,26,.55)"/>
+    <path d="M200,0 L400,200 L200,400 L0,200 Z" fill="rgba(157,140,240,.08)"/>
+    <path d="M200,0 L300,100 L200,200 L100,100 Z" fill="rgba(246,198,91,.08)"/>
+    <g fill="none" stroke-linecap="round">
+      <path class="k-line" d="M0,0 H400 V400 H0 Z" stroke="${C.gold}" stroke-width="2" opacity=".8"/>
+      <path class="k-line" d="M0,0 L400,400 M400,0 L0,400" stroke="${C.lilac}" stroke-width="1.4" opacity=".55"/>
+      <path class="k-line" d="M200,0 L400,200 L200,400 L0,200 Z" stroke="${C.lilac}" stroke-width="1.4" opacity=".55"/>
     </g>
-    <g transform="translate(200 200)">${triRing(16, 10, 22, C.red, C.yellow, 1)}<circle r="10" fill="${C.yellow}" stroke="${C.ink}" stroke-width="1.6"/></g>
+    <path d="${starPath(200, 200, 12, 4, 0.34)}" fill="${C.gold}"/>
     ${houses}
   </svg>`;
 }
@@ -96,16 +96,16 @@ export function initKundli() {
     const S = RASHIS[chart.sun.rashi];
     const nak = chart.moon.nakshatra;
     facts.innerHTML = `
-      <div class="fact"><small>Lagna · Ascendant</small><strong>${L.sa}</strong><span class="deva">${L.hi}</span> <span>${Math.floor(chart.lagna.degree)}°</span></div>
+      <div class="fact"><small>Lagna · Ascendant</small><strong>${L.sa}</strong><span class="deva">${L.hi}</span><span class="deg">${Math.floor(chart.lagna.degree)}°</span></div>
       <div class="fact"><small>Rashi · Moon sign</small><strong>${M.sa}</strong><span class="deva">${M.hi}</span></div>
-      <div class="fact"><small>Nakshatra</small><strong>${nak.name}</strong> <span>pada ${nak.pada}</span></div>
+      <div class="fact"><small>Nakshatra</small><strong>${nak.name}</strong><span class="deg">pada ${nak.pada}</span></div>
       <div class="fact"><small>Surya · Sun sign</small><strong>${S.sa}</strong><span class="deva">${S.hi}</span></div>
       <div class="fact"><small>Janma Tithi</small><strong>${chart.tithi.paksha} ${chart.tithi.name}</strong></div>`;
     reading.innerHTML = `
         <h3>${name ? `${name}, here's your first glimpse` : 'Reading the sky right now'}</h3>
         <p>${LAGNA_TEXT[chart.lagna.rashi]} ${MOON_TEXT[M.element]}</p>
         <p>Your full Kundli covers Vimshottari dasha, doshas, yogas and remedies. A Jyotishi can walk you through it.</p>
-        <a class="btn btn-yellow" href="#jyotishi">Discuss my chart, free</a>`;
+        <a class="btn btn-primary" href="#jyotishi">Discuss my chart, free</a>`;
   }
 
   const now = new Date();

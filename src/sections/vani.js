@@ -1,13 +1,16 @@
-// Act VIII — testimonials performed as Tholu Bommalata: translucent, perforated
-// leather puppets held against a lamp-lit screen, worked by rods from below.
+// Act VIII — testimonials performed by papercut shadow puppets, after the
+// Tholu Bommalata of Andhra Pradesh: perforated silhouettes held against a
+// lamp-lit screen and worked by rods from below.
+import { starPath, crescentPath } from '../art/cosmos.js';
+
 const LEATHER = {
-  skin: 'rgba(168, 74, 22, 0.86)',
-  red: 'rgba(184, 32, 22, 0.84)',
-  yellow: 'rgba(236, 168, 32, 0.84)',
-  green: 'rgba(36, 120, 66, 0.84)',
-  blue: 'rgba(36, 70, 150, 0.82)',
-  line: '#2a1206',
-  hole: '#fff2c6',
+  skin: '#1d0f31',
+  red: '#25123f',
+  yellow: '#2b1648',
+  green: '#1d0f31',
+  blue: '#25123f',
+  line: '#13081f',
+  hole: '#ffe6b0',
 };
 
 export const STORIES = [
@@ -64,7 +67,12 @@ export function initVani(ctx) {
   const dots = quote.querySelector('[data-quote-dots]');
 
   svg.innerHTML = `
-    <defs><filter id="sp-soft"><feGaussianBlur stdDeviation="0.7"/></filter></defs>
+    <defs><filter id="sp-soft"><feGaussianBlur stdDeviation="0.8"/></filter></defs>
+    <g fill="${LEATHER.skin}" opacity=".9">
+      <path d="${crescentPath(34, 18, -10)}" transform="translate(120 90)"/>
+      <path d="${starPath(220, 60, 10, 5)}"/><path d="${starPath(700, 70, 12, 4, 0.34)}"/><path d="${starPath(790, 140, 7, 5)}"/>
+      <path d="M0,460 L0,420 C120,396 240,430 380,414 C520,398 640,428 900,404 L900,460 Z"/>
+    </g>
     <g filter="url(#sp-soft)">
       <g class="sp sp-a" transform="translate(300 250)">${figure({ crown: false, bun: true, skirt: LEATHER.green, top: LEATHER.red })}</g>
       <g class="sp sp-b" transform="translate(610 250) scale(-1 1)">${figure({ crown: true, skirt: LEATHER.yellow, top: LEATHER.blue, moustache: true })}</g>
